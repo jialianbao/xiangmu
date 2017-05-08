@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div{background: #999;text-align: center;padding: 30px;}
+    </style>
+</head>
+<body>
+<div id="div">
+
+</div>
+<script>
+    var div = document.getElementById("div");
+    for (var i = 0;i<30;i++){
+       for (var c = 0;c<39;c++){
+//            var div1 = document.createElement("div");
+//            div1.style.width = "30px";
+//            div1.style.height = "30px";
+//            div1.style.background = "#fff";
+//            div1.style.display = "inline-block";
+//            div1.style.border = "1px solid black";
+//            div1.style.margin = "2px 1px";
+            var inp = document.createElement("input");
+            inp.style.width = "30px";
+            inp.style.height = "30px";
+            inp.style.border = "1px solid black";
+           inp.style.color ="#fff";
+            div.appendChild(inp);
+            //div1.style.borderRadius = "15px"
+//            div.appendChild(div1);
+            inp.onclick=function(){
+                this.style.background = "red";
+                this.value = "红";
+            };
+            inp.ondblclick=function(){
+                this.style.background = "black";
+                this.value = "黑";
+            };
+            inp.onkeydown=function(evt){
+                var evn = evt||window.event;
+                if(evn.keyCode==13){
+                    this.style.background = "#fff";
+                }
+            }
+        }
+        var br = document.createElement("br");
+        div.appendChild(br)
+    }
+</script>
+</body>
+</html>

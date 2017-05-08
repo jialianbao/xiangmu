@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>document</title>
+		<style>
+			#ss1{
+				color:red;
+				font-size:120px;
+				text-align:right;
+				height:700px;
+				width:700px;
+				float:left;
+				background:url(../img/wo.jpg) no-repeat right;
+				background-size:700px;
+			}
+			#ss2{
+				color:pink;
+				font-size:60px;
+				text-align:center;
+				width:550px;
+				padding:500px 25px 0;
+				height:200px;
+				float:right;
+				background:url(../img/yingy.jpg) no-repeat center;
+				background-size:700px;
+			}
+		</style>
+		</head>
+	<body>
+		<!--<audio autoplay="autopaly">
+				<source src="../mp3/yatou.mp3" type="audio/mp3" />
+		</audio>-->
+
+		<div id="div1">
+			<div id="ss1"></div>
+			<div id="ss2"></div>
+		<div>
+		<script>
+			var div1 = document.getElementById("div1");
+			var ss1 = document.getElementById("ss1");
+			var c = ["&ensp;&ensp;","莹莹","啊","我","狠","爱","你","呦","，"," ","<br>","爱","的","不","行","了"];
+			var d = "";
+			var i=0;
+			function shijian(cc){
+				d += cc[i];
+				i++;
+				if (i==cc.length)
+				{
+					i=0;
+					clearInterval(y);
+				}
+				ss1.innerHTML = d;
+			}
+			y = setInterval("shijian(c);",500)
+		</script>
+		<script>
+		function keyi(){
+			var shijian = new Date().valueOf();
+			var kaishi = new Date(2016,10,20,0,0,0).valueOf();
+			var ddd = kaishi-shijian;
+			var tian = parseInt(ddd/1000/60/60/24);
+			var xiaoshi = parseInt(ddd/1000/60/60%24);
+			var fen = parseInt(ddd/1000/60%60);
+			var miao = parseInt(ddd/1000%60);
+			document.getElementById("ss2").innerHTML = "我们已经相恋<br>"+tian+"天"+xiaoshi+"小时<br>"+fen+"分"+miao+"秒了哟";
+		}
+		setInterval(keyi,1000)
+		</script>
+		
+	</body>
+</html>

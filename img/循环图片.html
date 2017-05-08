@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>document</title>
+	</head>
+	<body>
+		<img src="0.png" id="img" width="200"/>
+		<input type="button" value="上一张"id="shang"onclick="up();"/>
+		<input type="button" value="下一张"id="xia"onclick="down();"/>
+
+
+		<script type="text/Javascript">
+			var img = document.getElementById("img");
+			var shang = document.getElementById("shang");
+			var xia = document.getElementById("xia");
+			var shuzu = ["0.png","1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png"]
+			var i = 0;
+			function up(){
+				i--;
+				if (i==-1)
+				{
+					i=shuzu.length-1
+				}
+				img.src=shuzu[i]
+			}
+			function down(){
+				i++;
+				if (i==shuzu.length)
+				{
+					i=0
+				}
+				img.src=shuzu[i]
+			}
+		</script>
+		
+	</body>
+</html>
